@@ -1,4 +1,4 @@
-export default function Week1() {
+export default function Page() {
   return (
     <main>
       <h1>Week 1 Demo</h1>
