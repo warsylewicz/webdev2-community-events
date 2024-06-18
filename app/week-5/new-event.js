@@ -19,6 +19,7 @@ export default function NewEvent() {
       description,
     };
     console.log(newEvent);
+    alert("See console for new event data");
 
     setEventCreated(true);
 
