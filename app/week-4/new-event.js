@@ -4,7 +4,7 @@ export default function NewEvent() {
       <h1 className="text-2xl text-gray-800 font-bold mb-8">
         Create New Event
       </h1>
-      <p className="text-black">Event form goes here next week.</p>
+      <p className="text-black">Event form goes here.</p>
     </div>
   );
 }
