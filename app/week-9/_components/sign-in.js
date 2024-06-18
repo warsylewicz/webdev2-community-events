@@ -9,6 +9,7 @@ export default function Login() {
   async function handleSignIn() {
     try {
       await gitHubSignIn();
+      // console.log(user);
     } catch (error) {
       console.log(error);
     }

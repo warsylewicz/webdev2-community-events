@@ -19,12 +19,6 @@ export default function NewEvent({ onCreateEvent, onCloseNewEvent }) {
     };
 
     onCreateEvent(newEvent);
-
-    setName("");
-    setDate("");
-    setLocation("");
-    setDescription("");
-
     onCloseNewEvent();
   };
 
@@ -46,7 +40,7 @@ export default function NewEvent({ onCreateEvent, onCloseNewEvent }) {
 
   return (
     <div
-      className="absolute h-full w-full bg-blue-gray-100 flex items-center justify-center bg-gray-950/90"
+      className="absolute top-0 left-0 h-screen w-screen bg-blue-gray-100 flex items-center justify-center bg-gray-950/90"
       onClick={onCloseNewEvent}
     >
       <div

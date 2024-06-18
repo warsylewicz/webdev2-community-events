@@ -4,7 +4,6 @@ import { useState } from "react";
 import eventsData from "./events.json";
 import NewEvent from "./new-event";
 import EventList from "./event-list";
-import Weather from "./weather";
 
 export default function Page() {
   // read events from events.json and convert date strings to Date objects
@@ -30,7 +29,6 @@ export default function Page() {
       <h1 className="text-4xl font-bold m-6 text-center text-yellow-300">
         Community Events
       </h1>
-      <Weather />
       <div className="fixed right-16 bottom-16">
         <button
           className="bg-yellow-500 hover:bg-yellow-300 text-blue-900 font-bold py-2 px-2 rounded-full w-20 h-20 flex items-center justify-center"

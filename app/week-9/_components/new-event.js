@@ -19,6 +19,12 @@ export default function NewEvent({ onCreateEvent, onCloseNewEvent }) {
     };
 
     onCreateEvent(newEvent);
+
+    setName("");
+    setDate("");
+    setLocation("");
+    setDescription("");
+
     onCloseNewEvent();
   };
 

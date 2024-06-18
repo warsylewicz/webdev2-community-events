@@ -1,29 +1,29 @@
 "use client";
 
-import { useState } from "react";
-import eventsData from "./_data/events.json";
+import { useState, useEffect } from "react";
 import NewEvent from "./_components/new-event";
 import EventList from "./_components/event-list";
 import NewEventButton from "./_components/new-event-button";
 import Weather from "./_components/weather";
 import SignIn from "./_components/sign-in";
 import { useUserAuth } from "./_utils/auth-context";
+import { subscribeToEvents, addEvent } from "./_services/event-services";
 
 export default function Page() {
-  // read events from events.json and convert date strings to Date objects
-  const [events, setEvents] = useState(
-    eventsData.map((event) => ({
-      ...event,
-      date: new Date(event.date),
-    }))
-  );
-
   const { user } = useUserAuth();
 
+  const [events, setEvents] = useState([]);
   const [newEventOpen, setNewEventOpen] = useState(false);
 
+  useEffect(() => {
+    const unsubscribe = subscribeToEvents(setEvents);
+    return () => unsubscribe();
+  }, []);
+
   const handleCreateEvent = (event) => {
-    setEvents([...events, event]);
+    event.dateCreated = new Date();
+    event.creator = { id: user.uid, name: user.displayName };
+    addEvent(event);
   };
 
   const handleCloseNewEvent = () => {
